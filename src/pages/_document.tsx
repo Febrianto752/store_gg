@@ -18,6 +18,7 @@ export default function Document() {
         <link rel="stylesheet" href="/css/checkout.css" />
         <link rel="stylesheet" href="/css/sign-in.css" />
         <link rel="stylesheet" href="/css/sign-up.css" />
+        <link rel="stylesheet" href="/css/sign-up-photo.css" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
