@@ -16,6 +16,7 @@ export default function Document() {
         <link rel="stylesheet" href="/css/utilities.css" />
         <link rel="stylesheet" href="/css/detail.css" />
         <link rel="stylesheet" href="/css/checkout.css" />
+        <link rel="stylesheet" href="/css/complete-checkout.css" />
         <link rel="stylesheet" href="/css/sign-in.css" />
         <link rel="stylesheet" href="/css/sign-up.css" />
         <link rel="stylesheet" href="/css/sign-up-photo.css" />
