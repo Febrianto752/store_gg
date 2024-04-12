@@ -24,6 +24,7 @@ export default function Document() {
         <link rel="stylesheet" href="/css/sidebar.css" />
         <link rel="stylesheet" href="/css/overview.css" />
         <link rel="stylesheet" href="/css/transactions.css" />
+        <link rel="stylesheet" href="/css/transactions-detail.css" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
