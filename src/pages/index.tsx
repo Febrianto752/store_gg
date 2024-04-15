@@ -16,7 +16,7 @@ export default function Home() {
       <Navbar />
 
       <section className="header pt-lg-60 pb-50">
-        <div className="container-xxl container-fluid">
+        <div className="container-xxl container">
           <div className="row gap-lg-0 gap-5">
             <div className="col-lg-6 col-12 my-auto">
               <p className="text-support text-lg color-palette-2">
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       <section id="feature" className="feature pt-50 pb-50">
-        <div className="container-fluid">
+        <div className="container">
           <h2 className="text-4xl fw-bold color-palette-1 text-center mb-30">
             It’s Really That
             <br /> Easy to Win the Game
@@ -415,7 +415,7 @@ export default function Home() {
       </section>
 
       <section className="featured-game pt-50 pb-50">
-        <div className="container-fluid">
+        <div className="container">
           <h2 className="text-4xl fw-bold color-palette-1 mb-30">
             Our Featured
             <br /> Games This Year
@@ -696,8 +696,8 @@ export default function Home() {
       </section>
 
       <section className="footer pt-50">
-        <footer className="container">
-          <div className="container-fluid">
+        <footer>
+          <div className="container">
             <div className="row">
               <div className="col-lg-4 text-lg-start text-center">
                 <a href="" className="mb-30">
