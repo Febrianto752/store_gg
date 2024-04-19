@@ -1,12 +1,7 @@
 import Image from "next/image";
 
 interface IGameItemProps {
-  thumbnail:
-    | "Thumbnail-1"
-    | "Thumbnail-2"
-    | "Thumbnail-3"
-    | "Thumbnail-4"
-    | "Thumbnail-5";
+  thumbnail: string;
   title: string;
   category: string;
 }
@@ -22,7 +17,7 @@ export default function GameItem({
         <div className="blur-sharp">
           <Image
             className="thumbnail"
-            src={`/img/${thumbnail}.png`}
+            src={thumbnail}
             width="205"
             height="270"
             alt="thumbnail"
