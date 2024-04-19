@@ -13,10 +13,11 @@ interface MenuItemProps {
     | "ic-menu-reward"
     | "ic-menu-setting";
   active?: boolean;
+  href: string;
 }
 
 export default function MenuItem(props: Partial<MenuItemProps>) {
-  const { title, icon, active } = props;
+  const { title, icon, active, href = "/" } = props;
   const classItem = cx({
     item: true,
     "mb-30": true,
@@ -29,7 +30,7 @@ export default function MenuItem(props: Partial<MenuItemProps>) {
         <Image src={`/icon/${icon}.svg`} width={25} height={25} alt="icon" />
       </div>
       <p className="item-title m-0">
-        <Link href="#" className="text-lg text-decoration-none">
+        <Link href={href} className="text-lg text-decoration-none">
           {title}
         </Link>
       </p>
