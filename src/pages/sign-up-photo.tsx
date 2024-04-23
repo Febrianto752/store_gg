@@ -4,6 +4,7 @@ import { getGameCategory } from "@/services/player";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function SignUpPhoto() {
   const [categories, setCategories] = useState([]);
@@ -46,9 +47,9 @@ export default function SignUpPhoto() {
     data.append("favorite", favorite);
 
     const result = await setSignUp(data);
+    console.log("result :", result);
     if (result.error) {
-      console.log(result.error);
-      alert(result.error);
+      toast.error(result.message);
     } else {
       router.push("/sign-up-success");
       // [CODE UPDATE] di tutorial saya simpan remove user-form disini,
@@ -59,6 +60,7 @@ export default function SignUpPhoto() {
 
   return (
     <section className="sign-up-photo mx-auto pt-lg-227 pb-lg-227 pt-130 pb-50">
+      <ToastContainer />
       <div className="container mx-auto">
         <form action="">
           <div className="form-input d-md-block d-flex flex-column">
