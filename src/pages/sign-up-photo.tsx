@@ -43,8 +43,9 @@ export default function SignUpPhoto() {
                   name="category"
                   className="form-select d-block w-100 rounded-pill text-lg"
                   aria-label="Favorite Game"
+                  defaultValue="selected"
                 >
-                  <option value="" disabled selected>
+                  <option value="selected" disabled>
                     Select Category
                   </option>
                   <option value="fps">First Person Shoter</option>
