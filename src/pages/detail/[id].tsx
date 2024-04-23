@@ -62,7 +62,7 @@ export default function Detail() {
             <div className="col-xl-9 col-lg-8 col-md-7 ps-md-25">
               <TopUpItem data={data} type="desktop" />
               <hr />
-              <TopUpForm nominals={nominals} payments={[]} />
+              <TopUpForm nominals={nominals} payments={payments} />
             </div>
           </div>
         </div>
