@@ -2,7 +2,7 @@ import Illustration from "./Illustration";
 
 export default function MainBanner() {
   return (
-    <section className="header pt-lg-60 pb-50">
+    <section className="header pt-5 pt-lg-60 pb-50">
       <div className="container-xxl container">
         <div className="row gap-lg-0 gap-5">
           <div className="col-lg-6 col-12 my-auto">
