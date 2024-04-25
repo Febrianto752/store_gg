@@ -1,7 +1,6 @@
 export interface CategoryTypes {
   _id: string;
   name: string;
-  __v: number;
 }
 
 export interface GameItemTypes {
