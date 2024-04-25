@@ -1,12 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
+import { JWTPayloadTypes, UserTypes } from "@/services/data-types";
+import Cookies from "js-cookie";
 
-interface AuthProps {
-  isLogin?: boolean;
-}
+export default function Auth() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({
+    avatar: `${process.env.NEXT_PUBLIC_API}/images/no_image.jpg`,
+  });
 
-export default function Auth(props: AuthProps) {
-  const { isLogin } = props;
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      const jwtToken = atob(token);
+      const payload: JWTPayloadTypes = jwtDecode(jwtToken);
+      const userFromPayload: UserTypes = payload.player;
+      if (userFromPayload.avatar) {
+        console.log("ada avatar");
+        setUser({
+          avatar: `${process.env.NEXT_PUBLIC_IMG}/${userFromPayload.avatar}`,
+        });
+      }
+      setIsLogin(true);
+    }
+  }, []);
 
   if (isLogin) {
     return (
@@ -22,10 +42,11 @@ export default function Auth(props: AuthProps) {
             aria-expanded="false"
           >
             <Image
-              src="/img/avatar-1.png"
+              src={user.avatar}
               width={40}
               height={40}
               alt="avatar"
+              className="rounded-circle"
             />
           </a>
 
@@ -69,13 +90,13 @@ export default function Auth(props: AuthProps) {
   }
   return (
     <li className="nav-item my-auto">
-      <a
+      <Link
         className="btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill"
-        href="./src/sign-in.html"
+        href="/sign-in"
         role="button"
       >
         Sign In
-      </a>
+      </Link>
     </li>
   );
 }
