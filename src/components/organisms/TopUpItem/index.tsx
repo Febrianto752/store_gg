@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface TopUpItemProps {
   type: "desktop" | "mobile";
   data: {
@@ -11,7 +13,7 @@ interface TopUpItemProps {
 export default function TopUpItem(props: TopUpItemProps) {
   const { type, data } = props;
 
-  const ROOT_IMG = process.env.NEXT_PUBLIC_IMG;
+  const BASE_IMG_URL = process.env.NEXT_PUBLIC_IMG;
 
   if (type === "desktop") {
     return (
@@ -28,10 +30,10 @@ export default function TopUpItem(props: TopUpItemProps) {
   return (
     <div className="row align-items-center">
       <div className="col-md-12 col-4">
-        <img
-          src={`${ROOT_IMG}/${data.thumbnail}`}
-          width="280"
-          height="380"
+        <Image
+          src={`${BASE_IMG_URL}/${data.thumbnail}`}
+          width={280}
+          height={380}
           className="img-fluid"
           alt=""
         />
