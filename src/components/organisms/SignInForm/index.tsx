@@ -2,7 +2,7 @@ import { setLogin } from "@/services/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Cookies from "js-cookie";
 
@@ -11,7 +11,8 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const onSubmit = async () => {
+  const onSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     const data = {
       email,
       password,
@@ -34,7 +35,7 @@ export default function SignInForm() {
   };
   return (
     <>
-      <form action="">
+      <form onSubmit={onSubmit}>
         <div className="container mx-auto">
           <div className="pb-50">
             <a className="navbar-brand" href="../index.html">
@@ -83,9 +84,8 @@ export default function SignInForm() {
           </div>
           <div className="button-group d-flex flex-column mx-auto pt-50">
             <button
-              type="button"
+              type="submit"
               className="btn btn-sign-in fw-medium text-lg text-white rounded-pill mb-16"
-              onClick={onSubmit}
             >
               Sign In
             </button>
