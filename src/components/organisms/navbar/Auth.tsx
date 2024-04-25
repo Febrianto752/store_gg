@@ -12,6 +12,8 @@ export default function Auth() {
     avatar: `${process.env.NEXT_PUBLIC_API}/images/no_image.jpg`,
   });
 
+  const router = useRouter();
+
   useEffect(() => {
     const token = Cookies.get("token");
     if (token) {
@@ -27,6 +29,12 @@ export default function Auth() {
       setIsLogin(true);
     }
   }, []);
+
+  const onLogout = () => {
+    Cookies.remove("token");
+    router.push("/");
+    setIsLogin(false);
+  };
 
   if (isLogin) {
     return (
@@ -76,12 +84,13 @@ export default function Auth() {
               </Link>
             </li>
             <li>
-              <Link
+              <a
                 className="dropdown-item text-lg color-palette-2"
-                href="/sign-in"
+                href="#"
+                onClick={onLogout}
               >
                 Log out
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
