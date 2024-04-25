@@ -1,9 +1,32 @@
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 export default function CheckoutItem() {
+  const [dataItem, setDataItem] = useState({
+    thumbnail: "",
+    name: "",
+    category: {
+      name: "",
+    },
+  });
+  useEffect(() => {
+    const dataFromLocal = localStorage.getItem("data-item");
+    const dataItemLocal = JSON.parse(dataFromLocal!);
+    console.log(dataFromLocal);
+    setDataItem(dataItemLocal);
+  }, []);
+
+  const BASE_IMG_URL = process.env.NEXT_PUBLIC_IMG;
+
   return (
     <div className="game-checkout d-flex flex-row align-items-center pt-md-50 pb-md-50 pt-30 pb-30">
       <div className="pe-4">
         <div className="cropped">
-          <img src="/img/Thumbnail-3.png" className="img-fluid" alt="" />
+          <img
+            src={`${BASE_IMG_URL}/${dataItem.thumbnail}`}
+            className="img-fluid"
+            alt=""
+          />
         </div>
       </div>
       <div>
