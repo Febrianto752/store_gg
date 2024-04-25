@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
+      <ToastContainer />
     </>
   );
 }

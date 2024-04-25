@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 
 export default function SignInForm() {
@@ -100,7 +100,6 @@ export default function SignInForm() {
           </div>
         </div>
       </form>
-      <ToastContainer />
     </>
   );
 }
