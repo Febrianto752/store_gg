@@ -21,11 +21,13 @@ export default function CheckoutItem() {
   return (
     <div className="game-checkout d-flex flex-row align-items-center pt-md-50 pb-md-50 pt-30 pb-30">
       <div className="pe-4">
-        <div className="cropped">
-          <img
+        <div className="">
+          <Image
             src={`${BASE_IMG_URL}/${dataItem.thumbnail}`}
             className="img-fluid"
             alt=""
+            width={140}
+            height={140}
           />
         </div>
       </div>
