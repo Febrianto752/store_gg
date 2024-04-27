@@ -8,8 +8,7 @@ import {
   PaymentTypes,
 } from "@/services/data-types";
 import { getDetailVoucher, getFeaturedGame } from "@/services/player";
-import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface DetailProps {
   dataItem: GameItemTypes;
@@ -76,6 +75,7 @@ export async function getStaticProps({ params }: GetStaticProps) {
   return {
     props: {
       dataItem: {
+        _id: data._id,
         name: data.name,
         thumbnail: data.thumbnail,
         status: data.status,

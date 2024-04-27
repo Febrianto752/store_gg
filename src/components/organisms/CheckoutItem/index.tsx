@@ -32,11 +32,10 @@ export default function CheckoutItem() {
         </div>
       </div>
       <div>
-        <p className="fw-bold text-xl color-palette-1 mb-10">
-          Mobile Legends:
-          <br /> The New Battle 2021
+        <p className="fw-bold text-xl color-palette-1 mb-10">{dataItem.name}</p>
+        <p className="color-palette-2 m-0">
+          Category: {dataItem.category.name}
         </p>
-        <p className="color-palette-2 m-0">Category: Mobile</p>
       </div>
     </div>
   );
