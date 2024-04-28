@@ -11,7 +11,7 @@ export default function SideBar({ activeMenu }: ISideBarProps) {
   const router = useRouter();
   const onLogOut = () => {
     Cookies.remove("token");
-    router.push("/sign-in");
+    router.replace("/sign-in");
   };
   return (
     <section className="sidebar">
