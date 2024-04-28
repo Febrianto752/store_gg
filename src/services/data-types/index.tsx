@@ -58,3 +58,9 @@ export interface CheckoutTypes {
   name: string;
   accountUser: string;
 }
+
+export interface TopUpCategoriesTypes {
+  _id: string;
+  value: number;
+  name: string;
+}
