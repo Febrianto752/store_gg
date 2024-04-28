@@ -3,7 +3,10 @@ import Category from "./Category";
 import TableRow from "./TableRow";
 import { getMemberOverview } from "@/services/member";
 import { toast } from "react-toastify";
-import { TopUpCategoriesTypes } from "@/services/data-types";
+import {
+  HistoryTransactionTypes,
+  TopUpCategoriesTypes,
+} from "@/services/data-types";
 
 export default function OverviewContent() {
   const [count, setCount] = useState([]);
@@ -63,40 +66,17 @@ export default function OverviewContent() {
                 </tr>
               </thead>
               <tbody>
-                <TableRow
-                  image="/img/overview-1.png"
-                  title="Mobile Legend"
-                  category="Desktop"
-                  item="200 Gold"
-                  price={290000}
-                  status="pending"
-                />
-                <TableRow
-                  image="/img/overview-2.png"
-                  title="Call of Duty:Modern"
-                  category="Desktop"
-                  item="550 Gold"
-                  price={740000}
-                  status="success"
-                />
-
-                <TableRow
-                  image="/img/overview-3.png"
-                  title="Clash of Clans"
-                  category="Mobile"
-                  item="100 Gold"
-                  price={120000}
-                  status="failed"
-                />
-
-                <TableRow
-                  image="/img/overview-4.png"
-                  title="The Royal Game"
-                  category="Mobile"
-                  item="225 Gold"
-                  price={200000}
-                  status="pending"
-                />
+                {data.map((item: HistoryTransactionTypes) => (
+                  <TableRow
+                    key={item._id}
+                    image={`${IMG}/${item.historyVoucherTopup.thumbnail}`}
+                    title={item.historyVoucherTopup.gameName}
+                    category={item.historyVoucherTopup.category}
+                    item={`${item.historyVoucherTopup.coinQuantity} ${item.historyVoucherTopup.coinName}`}
+                    price={item.value}
+                    status={item.status}
+                  />
+                ))}
               </tbody>
             </table>
           </div>
