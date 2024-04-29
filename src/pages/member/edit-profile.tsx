@@ -22,12 +22,15 @@ export default function EditProfile() {
                   />
 
                   <div className="avatar-overlay position-absolute top-0 d-flex justify-content-center align-items-center">
-                    <Image
-                      src={"/icon/ic-trash.svg"}
-                      width={24}
-                      height={24}
-                      alt="trash icon"
-                    />
+                    <label htmlFor="avatar">
+                      <Image
+                        src={"/icon/ic-trash.svg"}
+                        width={24}
+                        height={24}
+                        alt="trash icon"
+                        className="hover-cursor-pointer"
+                      />
+                    </label>
                   </div>
                 </div>
                 <div className="image-upload">
