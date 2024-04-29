@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 
 interface ICallAPIProps extends AxiosRequestConfig {
   token?: boolean;
+  serverToken?: string;
 }
 
 export default async function callAPI({
@@ -10,9 +11,14 @@ export default async function callAPI({
   method,
   data,
   token,
+  serverToken,
 }: ICallAPIProps) {
   let headers = {};
-  if (token) {
+  if (serverToken) {
+    headers = {
+      Authorization: `Bearer ${serverToken}`,
+    };
+  } else if (token) {
     const tokenCookies = Cookies.get("token");
     if (tokenCookies) {
       const jwtToken = atob(tokenCookies);
