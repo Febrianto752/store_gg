@@ -14,7 +14,7 @@ export default function Category({ children, nominal, icon }: CategoryProps) {
       <div className="categories-card">
         <div className="d-flex align-items-center mb-24">
           <Image
-            src={`/icon/${icon}.svg`}
+            src={`/icon/${icon.toLowerCase()}.svg`}
             width={60}
             height={60}
             alt="category icon"
