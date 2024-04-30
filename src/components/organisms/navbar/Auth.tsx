@@ -21,7 +21,6 @@ export default function Auth() {
       const payload: JWTPayloadTypes = jwtDecode(jwtToken);
       const userFromPayload: UserTypes = payload.player;
       if (userFromPayload.avatar) {
-        console.log("ada avatar");
         setUser({
           avatar: `${process.env.NEXT_PUBLIC_IMG}/${userFromPayload.avatar}`,
         });

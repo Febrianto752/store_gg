@@ -29,7 +29,6 @@ export default function CheckoutConfirmation() {
       name: dataTopUp.bankAccountName,
       accountUser: dataTopUp.verifyID,
     };
-    console.log("data", data);
     const response = await setCheckout(data);
     if (response.error) {
       toast.error(response.message);
