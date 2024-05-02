@@ -13,16 +13,21 @@ export default async function callAPI({
   token,
   serverToken,
 }: ICallAPIProps) {
-  let headers = {};
+  let headers: any = {
+    "Access-Control-Allow-Origin": "*",
+  };
   if (serverToken) {
     headers = {
+      "Access-Control-Allow-Origin": "*",
       Authorization: `Bearer ${serverToken}`,
     };
   } else if (token) {
     const tokenCookies = Cookies.get("token");
     if (tokenCookies) {
       const jwtToken = atob(tokenCookies);
+
       headers = {
+        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${jwtToken}`,
       };
     }
